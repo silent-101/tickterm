@@ -1,0 +1,24 @@
+[package]
+name = "cli-clock"
+version = "0.1.0"
+description = "Cool CLI clock."
+authors = ["silent-101 <developersilent101@gmail.com>"]
+edition = "2024"
+
+[dependencies]
+crossterm = "0.29.0"
+ratatui = "0.30.0"
+color-eyre = "0.6.3"
+tui-big-text = "0.8.1"
+chrono = "0.4.43"
+
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "z"        # Optimize for size (more aggressive than "s")
+strip = true
+panic = "abort"        # Remove unwinding code (smaller binary)
+
+[profile.release.package."*"]
+opt-level = "z"        # Optimize all dependencies for size
