@@ -1,5 +1,5 @@
 [package]
-name = "cli-clock"
+name = "tickterm"
 version = "0.1.0"
 description = "Cool CLI clock."
 authors = ["silent-101 <developersilent101@gmail.com>"]
@@ -16,9 +16,9 @@ chrono = "0.4.43"
 [profile.release]
 codegen-units = 1
 lto = true
-opt-level = "z"        # Optimize for size (more aggressive than "s")
+opt-level = "z"   # Optimize for size (more aggressive than "s")
 strip = true
-panic = "abort"        # Remove unwinding code (smaller binary)
+panic = "abort"   # Remove unwinding code (smaller binary)
 
 [profile.release.package."*"]
-opt-level = "z"        # Optimize all dependencies for size
+opt-level = "z" # Optimize all dependencies for size

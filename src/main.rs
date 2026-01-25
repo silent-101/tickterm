@@ -1,10 +1,10 @@
-mod clock;
-use crate::clock::app::Clock;
+mod tickterm;
+use crate::tickterm::app::TickTerm;
 
 fn main() -> color_eyre::Result<()> {
     color_eyre::install()?;
     let terminal = ratatui::init();
-    Clock::new().runner(terminal)?;
+    TickTerm::new().runner(terminal)?;
     ratatui::restore();
     Ok(())
 }
