@@ -3,6 +3,7 @@ pub enum BtnMode {
     Start,
     Stop,
     Reset,
+    Set,
 }
 
 #[derive(Debug)]
@@ -21,6 +22,7 @@ impl BtnState {
             BtnMode::Start => BtnMode::Start,
             BtnMode::Stop => BtnMode::Stop,
             BtnMode::Reset => BtnMode::Reset,
+            BtnMode::Set => BtnMode::Set,
         }
     }
     pub fn change_state(&mut self, state: BtnMode) {

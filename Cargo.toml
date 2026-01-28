@@ -1,16 +1,16 @@
 [package]
 name = "tickterm"
-version = "0.1.0"
+version = "0.3.0"
 description = "Cool CLI clock."
 authors = ["silent-101 <developersilent101@gmail.com>"]
 edition = "2024"
 
 [dependencies]
-crossterm = "0.29.0"
-ratatui = "0.30.0"
-color-eyre = "0.6.3"
-tui-big-text = "0.8.1"
-chrono = "0.4.43"
+crossterm = { version = "0.29.0", default-features = false, features = ["events"] }
+ratatui = { version = "0.30.0", default-features = false, features = ["crossterm"] }
+color-eyre = { version = "0.6.3", default-features = false }
+tui-big-text = { version = "0.8.1", default-features = false }
+chrono = { version = "0.4.43", default-features = false, features = ["clock", "std"] }
 
 
 [profile.release]
